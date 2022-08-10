@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour {
 	void OnPlayerScored(){
 	
 		_score++;
-		scoreText.text = _score;
+		scoreText.text = $"{_score}";
 	}
 
 	void SetPageState(PageState state){
