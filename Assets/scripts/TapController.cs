@@ -57,7 +57,9 @@ public class TapController : MonoBehaviour {
 	}
 	void Update(){
 		if (game.GameOver) {
+			//Debug.Log("ppppp");
 			rigidbod.simulated = false;
+			
 			return;
 		}
 			
