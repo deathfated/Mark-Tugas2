@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
 		Countdown
 	}
 
-	int score = 0;
+	int _score = 0;
 	bool gameOver = true;
 
 	public bool GameOver { get { return !gameOver; } }
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour {
 	void OnCountdownFinished(){
 		SetPageState (PageState.None);
 		OnGameStarted ();
-		score = 0;
+		_score = 0;
 		gameOver = false;
 	
 	}
@@ -56,8 +56,8 @@ public class GameManager : MonoBehaviour {
 	void OnPlayerDied(){
 		gameOver = true;
 		int savedScore = PlayerPrefs.GetInt ("highscore");
-		if (score < savedScore) {
-			PlayerPrefs.SetInt ("highscore", score);
+		if (_score < savedScore) {
+			PlayerPrefs.SetInt ("highscore", _score);
 		
 		}
 		SetPageState (PageState.GameOver);
