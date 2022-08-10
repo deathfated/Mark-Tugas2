@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour {
 	void OnPlayerDied(){
 		gameOver = true;
 		int savedScore = PlayerPrefs.GetInt ("highscore");
-		if (_score < savedScore) {
+		if (_score > savedScore) {
 			PlayerPrefs.SetInt ("highscore", _score);
 		
 		}
